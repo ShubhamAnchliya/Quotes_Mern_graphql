@@ -1,0 +1,64 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Macondo&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+/* .createQuote {
+    background-color: #cce5ff;
+  } */
+  
+  .heading {
+    margin-top: 30px;
+    text-align: center;
+    /* font-family: 'Indie Flower', cursive; */
+
+    font-family: 'Comfortaa', cursive;
+
+    /* color: #388effe8; */
+    color: #FF416C;
+	color: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	color: linear-gradient(to right, #FF4B2B, #FF416C);
+  }
+  
+
+
+.formC {
+	background-color: #FFFFFF;
+	/* display: flex; */
+	/* align-items: center; */
+	/* justify-content: center; */
+	/* flex-direction: column; */
+	/* padding: 0 50px; */
+	height: 100%;
+	/* text-align: center; */
+}
+  
+  .btnQuote {
+    margin: 25px;
+     text-align: center;
+     background: #36D1DC;  /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     
+
+     
+  }
+  
+.box {
+    text-align: center;
+    padding: 10px; 
+    /* margin: 20px ; */
+    /* margin-left: 31%; */
+    margin-top: 20px;
+    /* box-shadow:  5px 5px 5px 5px; */
+    border-radius: 20px;
+    box-shadow:   0 5px 5px 5px #0002;
+    background-color: white;
+    /* font-family: 'Indie Flower', cursive; */
+    font-size: 30px;
+    /* min-width: 400px; */
+    /* max-width: 400px; */
+    width: 35rem;
+    height: 10rem;
+
+}
+  
+

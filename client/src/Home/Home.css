@@ -1,0 +1,105 @@
+.home_heading {
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    /* color: #388effe8; */
+    color: #FF416C;
+	color: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	color: linear-gradient(to right, #FF4B2B, #FF416C);
+}
+
+
+
+
+
+.items_home {
+    /* background: #ce8888; */
+    /* flex-basis: 500px; */
+
+    /* height: 400px; */
+    margin-left: 22.5%;
+    margin-top: 30px;
+
+    /* margin: 5px; */
+    /* flex-basis: 65%; */
+    width: 55%;
+  }
+
+
+
+
+
+
+
+
+.quote_home_div{
+    /* height: 110px; */
+    /* height: auto; */
+    height: auto;
+    /* margin-bottom: 5px; */
+}
+
+
+
+
+
+
+
+
+.home_blockq{
+    font-size: 1.2rem;
+    /* width:70%; */
+
+    /* height: 165px ;  for auto in quote_home_div */  
+
+    /* margin:50px auto; */
+    /* font-family:Open Sans; */
+    font-style:italic;
+    /* color: #555555; */
+    padding:1em 30px 1em 65px;
+    border-left:8px solid #ACB6E5;
+
+
+    /* border-left:8px solid  ; */
+
+    font-family: 'Comfortaa', cursive;
+
+    background: #74ebd5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-bottom: 20px;
+
+    /* line-height:1.6; */
+    position: relative;
+    /* background:#EDEDED; */
+  }
+
+
+
+  .home_blockq::before{
+    font-family:Arial;
+    content: "\201C";
+    /* color:#78C0A8; */ 
+    color:#ACB6E5;
+    font-size:4em;
+    position: absolute;
+    left: 10px;
+    top:-10px;
+  }
+  
+  .home_blockq::after{
+    content: '';
+  }
+  
+  .home_blockq span{
+    display:block;
+    /* color:#333333; */
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: bold;
+    font-family: 'Comfortaa', cursive;
+    margin-top: 10px;
+    /* margin-bottom: 10px; */
+    margin-left: 40rem;
+    /* height: 10px; */
+  }

@@ -1,0 +1,45 @@
+project -     quotes_merng  
+
+username  - shubham
+password - 789456
+
+
+ip - 0.0.0.0/0
+
+// mongodb+srv://shubham:<password>@cluster0.mhhhx.mongodb.net/?retryWrites=true&w=majority
+
+
+
+mongodb+srv://shubham:789456@cluster0.mhhhx.mongodb.net/quotesmerng?retryWrites=true&w=majority
+
+
+
+
+export const MONGO_URI = "mongodb+srv://shubham:123456shubham@cluster0.5ke71.mongodb.net/graphqldb?retryWrites=true&w=majority"
+export const JWT_SECRET ="ertet"
+
+
+
+
+
+mutation createQuote{
+quote:createQuote(name:"Do good and good will come to you.")
+}
+
+
+
+{
+  "userNew": {
+    "firstName": "shubham",
+    "lastName": "anchliya",
+    "email": "shubham@gmail.com",
+    "password": "123456"
+  }
+}
+
+
+
+
+amanprasad9843@gmail.com
+
+741852
