@@ -8,6 +8,12 @@ const typeDefs = gql`
         quotes:[QuoteWithName]
         iquote(by:ID!):[Quote],
         myprofile:User
+        quotebyid(_id:ID!):QuoteById
+    }
+
+    type QuoteById{
+        _id:String
+        name: String!
     }
 
     type QuoteWithName{
@@ -30,6 +36,7 @@ const typeDefs = gql`
     }
 
     type Quote{
+        _id: ID!
         name: String!
         by:ID!
     }
@@ -37,12 +44,16 @@ const typeDefs = gql`
 
     type Token{
         token:String!
+        user:User
     }
 
     type Mutation{
         signUpUser(userNew:UserInput!):User
         signInUser(userSignIn:UserSignInInput!):Token
         createQuote(name:String!):String
+        updateQuote(_id: ID!,name:String!):String
+        deleteQuote(_id: ID!): String
+
     }
 
     input UserInput{

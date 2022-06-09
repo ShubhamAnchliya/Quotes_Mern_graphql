@@ -1,0 +1,571 @@
+//mutation   signup
+
+
+mutation createUser($userNew:UserInput!){
+  user:signUpUser(userNew:$userNew){ 
+    _id
+    email
+    firstName
+    lastName
+  }
+}
+
+
+
+// query variables
+ 
+{
+  "userNew": {
+    "firstName": "harsh",
+    "lastName": "sharma",
+    "email": "harsh@gmail.com",
+    "password": "1234567"
+  }
+}
+
+
+// output
+
+{
+  "data": {
+    "user": {
+      "_id": "629da1f60fc2f9756ce23d02",
+      "email": "harsh@gmail.com",
+      "firstName": "harsh",
+      "lastName": "sharma"
+    }
+  }
+}
+
+
+
+ 
+ 
+ 
+ 
+
+
+//mutation  login
+
+ mutation SignInUser($userSignIn:UserSignInInput!){
+    user:signInUser(userSignIn:$userSignIn){ 
+			token
+  }
+}
+
+
+// query variables
+
+{
+  "userSignIn": {
+     "email": "harsh@gmail.com",
+    "password": "1234567"
+  }
+}
+
+
+
+
+// output
+
+{
+  "data": {
+    "user": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjlkYTFmNjBmYzJmOTc1NmNlMjNkMDIiLCJpYXQiOjE2NTQ0OTc4NDZ9.NeOimRkGpwAqHYvEy_UbUPuyphArLLJDayzx9imtqCE"
+    }
+  }
+}
+
+
+ 
+ 
+ 
+ 
+ 
+ //mutation  add quote
+ 
+mutation createQuote{
+    quote:createQuote(name:"Do good and good will come to you.")
+}
+
+
+// http headers
+
+{
+  "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjlkYTFmNjBmYzJmOTc1NmNlMjNkMDIiLCJpYXQiOjE2NTQ0OTc4NDZ9.NeOimRkGpwAqHYvEy_UbUPuyphArLLJDayzx9imtqCE"
+}
+
+
+
+// output
+
+{
+  "data": {
+    "quote": "quote is save successfully"
+  }
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ // query  get other user profile by id
+
+        query getUserById($userid:ID!){ 
+            user(_id:$userid){
+                _id
+                firstName
+                lastName
+                email
+                quotes{
+                    name
+                }
+            }
+        }
+
+
+
+// http headers
+{
+  "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjlkOTVjODBmYzJmOTc1NmNlMjNjNDUiLCJpYXQiOjE2NTQ0OTcwNDF9.Wr68arOf4vmOz6NOErvJTtHUOD2Y4eRMIPCxFmGEDCI"
+}
+
+
+
+// output
+{
+  "data": {
+    "user": {
+      "_id": "629d95c80fc2f9756ce23c45",
+      "firstName": "shubham",
+      "lastName": "Anchliya",
+      "email": "shubham@gmail.com",
+      "quotes": [
+        {
+          "name": "To be a great champion you must believe you are the best. If you’re not, pretend you are"
+        },
+        {
+          "name": "Keep a positive attitude, even if results don’t seem to be occurring as quickly as you want them to."
+        }
+      ]
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+// query  get profile of login user
+
+        query getMyProfile{
+                user:myprofile{
+                    firstName
+                    lastName
+                    email
+                    quotes{
+                        name
+                    }
+                }
+                            
+        }
+
+
+
+// http headers
+{
+  "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjlkOTVjODBmYzJmOTc1NmNlMjNjNDUiLCJpYXQiOjE2NTQ0OTcwNDF9.Wr68arOf4vmOz6NOErvJTtHUOD2Y4eRMIPCxFmGEDCI"
+}
+
+
+
+// output
+
+{
+  "data": {
+    "user": {
+      "firstName": "shubham",
+      "lastName": "Anchliya",
+      "email": "shubham@gmail.com",
+      "quotes": [
+        {
+          "name": "To be a great champion you must believe you are the best. If you’re not, pretend you are"
+        },
+        {
+          "name": "Keep a positive attitude, even if results don’t seem to be occurring as quickly as you want them to."
+        }
+      ]
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+// query quotes by user id
+
+query getQuoteByUser($quoteby:ID!) {
+  iquote(by:$quoteby){
+    name
+    by
+  }
+}
+
+
+// query variables
+
+{
+  "quoteby": "629d95c80fc2f9756ce23c45"
+}
+
+
+// output
+{
+  "data": {
+    "iquote": [
+      {
+        "name": "To be a great champion you must believe you are the best. If you’re not, pretend you are",
+        "by": "629d95c80fc2f9756ce23c45"
+      },
+      {
+        "name": "Keep a positive attitude, even if results don’t seem to be occurring as quickly as you want them to.",
+        "by": "629d95c80fc2f9756ce23c45"
+      }
+    ]
+  }
+}
+
+
+
+
+
+
+
+// query login user by id old
+
+query getUserById($userid:ID!){ 
+  user(_id:$userid){
+    _id
+    firstName
+    lastName
+    email
+  }
+}
+
+
+// query variables
+
+{
+  "userid": "629d95c80fc2f9756ce23c45"
+}
+
+// output
+
+{
+  "data": {
+    "user": {
+      "_id": "629d95c80fc2f9756ce23c45",
+      "firstName": "shubham",
+      "lastName": "Anchliya",
+      "email": "shubham@gmail.com"
+    }
+  }
+}
+
+
+
+
+
+// query  get all quotes at home page
+
+query getAllQuotes{
+  quotes{
+    name
+    by{
+      _id
+      firstName
+    }
+  }
+}
+
+
+
+// output
+
+{
+  "data": {
+    "quotes": [
+      {
+        "name": "To be a great champion you must believe you are the best. If you’re not, pretend you are",
+        "by": {
+          "_id": "629d95c80fc2f9756ce23c45",
+          "firstName": "shubham"
+        }
+      },
+      {
+        "name": "Keep a positive attitude, even if results don’t seem to be occurring as quickly as you want them to.",
+        "by": {
+          "_id": "629d95c80fc2f9756ce23c45",
+          "firstName": "shubham"
+        }
+      },
+      {
+        "name": "The most important thing is to try and inspire people so that they can be great in whatever they want to do.",
+        "by": {
+          "_id": "629d962b0fc2f9756ce23c6f",
+          "firstName": "Joe"
+        }
+      },
+      {
+        "name": "Your uniqueness is not visible to everyone but it is important that you know that you are unique.",
+        "by": {
+          "_id": "629d97130fc2f9756ce23c89",
+          "firstName": "Aman"
+        }
+      },
+      {
+        "name": "Trust yourself to make any decision, not others because they are not in your shoes.",
+        "by": {
+          "_id": "629d99b20fc2f9756ce23cca",
+          "firstName": "will"
+        }
+      }
+    ]
+  }
+}
+
+
+
+
+
+
+
+
+
+
+import { gql } from '@apollo/client';
+
+export const GET_ALL_QUOTES = gql`
+        query getAllQuotes{
+                            quotes{
+                            name
+                            by{
+                                _id
+                                firstName
+                            }
+                            }
+                        }
+        `
+
+
+
+
+export const GET_MY_PROFILE = gql`
+        query getMyProfile{
+                user:myprofile{
+                    firstName
+                    lastName
+                    email
+                    quotes{
+                        name
+                    }
+                }
+                            
+        }
+`
+
+
+
+
+export const GET_USER_PROFILE_ID = gql`
+        query getUserById($userid:ID!){ 
+            user(_id:$userid){
+                _id
+                firstName
+                lastName
+                email
+                quotes{
+                    name
+                }
+            }
+        }
+`
+
+
+
+
+
+
+
+
+
+// mutation.js in client folder
+
+
+import { gql } from '@apollo/client';
+
+export const SIGNUP_USER = gql`
+       
+        mutation createUser($userNew:UserInput!){
+            user:signUpUser(userNew:$userNew){ 
+            firstName
+            }
+        }
+  
+    `
+
+
+export const LOGIN_USER = gql`
+       
+        mutation SignInUser($userSignIn:UserSignInInput!){
+            user:signInUser(userSignIn:$userSignIn){ 
+                    token
+            }
+        }
+    `
+
+   
+export const CREATE_QUOTE = gql`
+
+    mutation createQuote($name:String!) {
+        quote:createQuote(name:$name)
+    }
+
+    `
+
+
+
+
+
+
+
+
+//mutATION  update quote
+
+
+
+mutation updateQuote{
+ uquote:updateQuote( _id:"629d96800fc2f9756ce23c80", name:"Do the best you can. UQ ") 
+}
+
+
+// HTTP headers
+
+{
+  "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjlkYTFmNjBmYzJmOTc1NmNlMjNkMDIiLCJpYXQiOjE2NTQ1ODcwMTR9.ZChv0l-8NS0l-dRXa9cgw9qUyWC8-mL8DBpBJUdYsKE"
+}
+
+// output
+
+{
+  "data": {
+    "uquote": "629d96800fc2f9756ce23c80 updated Successfully!!!"
+  }
+}
+
+
+
+
+
+//Query GET QUOTE BY id
+
+
+
+
+ query getQuoteByID($_id:ID!){
+             quotebyid(_id:$_id){   
+   											 _id
+                        name         
+                }
+                            
+        }
+        
+
+
+// query variables
+
+{
+  "_id": "629d97250fc2f9756ce23c90"
+}
+
+
+//http header
+
+{
+  "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjlkYTFmNjBmYzJmOTc1NmNlMjNkMDIiLCJpYXQiOjE2NTQ1ODcwMTR9.ZChv0l-8NS0l-dRXa9cgw9qUyWC8-mL8DBpBJUdYsKE"
+}
+
+
+
+
+// output
+
+
+{
+  "data": {
+    "quotebyid": [
+      {
+        "name": "I have learned over the years that when one's mind is made up, this diminishes fear."
+      }
+    ]
+  }
+}
+
+
+
+
+
+
+
+
+
+// MUTATION  for delete  quote by id
+
+mutation deleteQuote($_id:ID!) {
+  deleteQuote(_id:$_id)
+    
+}
+
+
+
+
+
+//  query variables
+
+
+{
+  "_id":"629d97250fc2f9756ce23c90"
+}
+
+
+
+// http headers
+
+{
+  "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjlkYTFmNjBmYzJmOTc1NmNlMjNkMDIiLCJpYXQiOjE2NTQ2ODgyMTB9.t-gVUvwG8PO_VUhvNyV41PXlIRKMBC1kcxBSGNRyLXA"
+}
+
+
+
+// output
+
+{
+  "data": {
+    "deleteQuote": "629d97250fc2f9756ce23c90 Deleted Successfully"
+  }
+}
+
+
+
+
