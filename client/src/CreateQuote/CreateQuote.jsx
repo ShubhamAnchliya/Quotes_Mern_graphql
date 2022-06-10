@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CREATE_QUOTE } from '../gqloperations/mutation';
-import { GET_ALL_QUOTES } from '../gqloperations/queries';
+import { GET_ALL_QUOTES, GET_MY_PROFILE } from '../gqloperations/queries';
 
 import NavBar from '../NavBar/NavBar';
 import "./CreateQuote.css";
@@ -16,14 +16,12 @@ const CreateQuote = () => {
 
   const [quote,setQuote] = useState("");
 
-
-
   const [createQuote, { loading, error, data}] = useMutation(CREATE_QUOTE,{
-      refetchQueries:[
-        'getAllQuotes',
-        'getMyProfile'
-      ]
-  })
+    refetchQueries:[
+      { query: GET_ALL_QUOTES },
+      { query: GET_MY_PROFILE }
+    ]
+});
 
 
     useEffect(() => {
@@ -41,10 +39,10 @@ const CreateQuote = () => {
   if(loading) return <h1>Loading</h1>
 
   if(error){
-      console.log(error.message)
+      // console.log(error.message)
   }
   if(data){
-      console.log(data)
+      console.log('data',data)
   }
 
 
@@ -63,6 +61,7 @@ const CreateQuote = () => {
     setQuote("");
     
     navigate("/")
+    window.location.reload();
   }
 
 
@@ -86,7 +85,7 @@ const CreateQuote = () => {
 
           <h1 className="heading">Create Quotes Every Day</h1>
 
-          <form className='formC' onSubmit={formSubmit} >
+          <form className='formCQ' onSubmit={formSubmit} >
           <textarea  
             type= "text"
             value={quote}
@@ -99,7 +98,7 @@ const CreateQuote = () => {
           </textarea> 
 
           <div className="text-center">
-            <button  type='submit' className="btnQuote btn btn-primary btn-lg">Add Quote</button>
+            <button  type='submit' className="btnQuotes  btn-primary btn-lg">Add Quote</button>
           </div>
 
 

@@ -84,7 +84,10 @@
 
     /* margin: 5px; */
     /* flex-basis: 65%; */
-    width: 55%;
+
+
+    /* width: 55%; */
+    width: 65%;
   }
 
 
@@ -122,10 +125,38 @@
     /* background:#EDEDED; */
   }
 
+
+
+
+
+  .inline-block-child {
+    display: inline-block;
+  
+  }
+  
+  .edit_btns {
+   
+
+    /* width:6%; */
+    
+    width: 15%
+  }
+
+
+  .profilebtn{
+
+    margin: 5px;
+
+  }
+
+
+
   .block_div {
       /* height: 110px; */
       height: auto;
       margin-bottom: 5px;
+      padding: 1rem;
+      width:85%;
   }
   
   blockquote::before{

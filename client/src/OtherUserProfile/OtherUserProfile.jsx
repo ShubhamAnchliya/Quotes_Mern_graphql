@@ -9,7 +9,7 @@ import "./OtherUserProfile.css";
 const OtherUserProfile = () => {
 
     const {userid}   = useParams();
-    console.log(userid);
+    // console.log(userid);
 
 
   const {loading, error, data} = useQuery(GET_USER_PROFILE_ID,{

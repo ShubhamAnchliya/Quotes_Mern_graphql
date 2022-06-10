@@ -1,13 +1,20 @@
 
 
+
 import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { LOGIN_USER } from '../gqloperations/mutation';
+import { GET_ALL_QUOTES, GET_MY_PROFILE } from '../gqloperations/queries';
 import "./LogIn.css";
 
 
+
+
 const LogIn = () => {
+
+
+
 
   const navigate = useNavigate();
 
@@ -17,13 +24,23 @@ const LogIn = () => {
   })
 
 
-  const [signinUser, { error , loading, data }] = useMutation(LOGIN_USER,{
+  const [signInUser, { error , loading, data }] = useMutation(LOGIN_USER,{
     onCompleted(data){
-      localStorage.setItem("token",data.user.token)
-      navigate("/")
-    }
+      console.log('data',data?.signInUser?.user?._id);
+      localStorage.setItem("token",data?.signInUser?.token)
+      localStorage.setItem("id",data?.signInUser?.user?._id)
+      navigate(`/`)
 
-  });
+    }
+  },
+  {
+    refetchQueries:[
+      { query: GET_ALL_QUOTES },
+      { query: GET_MY_PROFILE }
+    ]
+  },
+  {fetchPolicy:"cache-and-network"}
+    );
 
   console.log(data,"data1");
 
@@ -59,12 +76,19 @@ const LogIn = () => {
     e.preventDefault();
     console.log(formData);
 
-    signinUser({
+
+ 
+    signInUser({
       variables:{
         userSignIn:formData
       }
     })
 
+
+  
+
+
+   
 
   }
 
@@ -76,15 +100,19 @@ const LogIn = () => {
 
         <div className='logInPage'>
 
-        {/* {
+
+        {
             error && 
             <div className='red card-panel'>{error.message}</div>
-        } */}
+        }
+
+
+
 
 
           <div className="container" id="container">
             <div className="form-container sign-in-container">
-              <form onSubmit={formSubmit} >
+              <form className='formL'  onSubmit={formSubmit} >
                 <h1>Sign in</h1>
                 
                 <span>or use your account</span>
@@ -105,9 +133,9 @@ const LogIn = () => {
                   onChange={InputEvent}
                   required
                 />
-                {/* <a href="df">Forgot your password?</a> */}
+  
 
-                <button type='submit'>Sign In</button>
+                <button className='buttonL' type='submit'>Sign In</button>
 
               </form>
             </div>
@@ -117,7 +145,7 @@ const LogIn = () => {
                 <div className="overlay-panel overlay-right">
                   <h1>Hello, Friend!</h1>
                   <p>Enter your personal details and start journey with us</p>
-                  <Link to={'/signup'} ><button className="ghost" id="signUp">Sign Up</button></Link>
+                  <Link to={'/signup'} ><button className="buttonL ghost" id="signUp">Sign Up</button></Link>
                 </div>
               </div>
             </div>

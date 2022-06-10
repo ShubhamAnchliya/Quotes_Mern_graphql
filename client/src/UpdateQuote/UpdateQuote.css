@@ -5,7 +5,7 @@
     background-color: #cce5ff;
   } */
   
-  .heading {
+  .update_heading {
     margin-top: 30px;
     text-align: center;
     /* font-family: 'Indie Flower', cursive; */
@@ -20,7 +20,7 @@
   
 
 
-.formCQ {
+.update_form {
 	background-color: #FFFFFF;
 	/* display: flex; */
 	/* align-items: center; */
@@ -29,21 +29,27 @@
 	/* padding: 0 50px; */
 	height: 100%;
 	text-align: center;
-
 }
   
-  .btnQuotes{
-      margin: 15px;
+  .update_btn {
+    margin: 20px;
      text-align: center;
      background: #36D1DC;  /* fallback for old browsers */
      background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
      background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
      
-
      
   }
+
+
+  .cancel_btn{
+    background: #FF512F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #DD2476, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  }
   
-.box {
+.update_box {
     text-align: center;
     padding: 10px; 
     /* margin: 20px ; */

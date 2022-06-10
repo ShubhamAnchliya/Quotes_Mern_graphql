@@ -42,7 +42,7 @@ a {
 	margin: 15px 0;
 }
 
-button {
+.buttons {
 	border-radius: 20px;
 	border: 1px solid #FF4B2B;
 	background-color: #FF4B2B;
@@ -56,20 +56,20 @@ button {
 	margin-top: 5px;
 }
 
-button:active {
+.buttons:active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.buttons:focus {
 	outline: none;
 }
 
-button.ghost {
+.buttons.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
 }
 
-form {
+.formS {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;

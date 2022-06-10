@@ -11,7 +11,7 @@ const Home = () => {
 
  const {loading, error, data} = useQuery(GET_ALL_QUOTES, {
     fetchPolicy:"cache-and-network"
-  })
+  });
 
 
  useEffect(() => {
@@ -19,7 +19,7 @@ const Home = () => {
     navigate("/login")
   }
 
-}, [])
+})
 
 
  if (loading) return 'Loading...';
@@ -41,7 +41,7 @@ const Home = () => {
           <div className='items_home' >
 
           {
-            data.quotes.map(quote =>{
+            data.quotes?.map(quote =>{
               return(
                 <div className='home_blockq'>
 

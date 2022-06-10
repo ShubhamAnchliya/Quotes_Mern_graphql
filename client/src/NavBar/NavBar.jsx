@@ -19,6 +19,7 @@ const NavBar = () => {
     const logOut = () => {
       localStorage.removeItem("token")
       console.log("logout");
+      // Window.location.reload()
      
     } 
 

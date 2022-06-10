@@ -74,7 +74,7 @@ const SignUp = () => {
             <div className="container right-panel-active" id="container">
                 <div className="form-container sign-up-container">
 
-                    <form onSubmit={formSubmit}>
+                    <form className='formS' onSubmit={formSubmit}>
 
                         <h1>Create Account</h1>
                         
@@ -116,7 +116,7 @@ const SignUp = () => {
                             required
                         />
 
-                        <button type='submit'>Sign Up</button>
+                        <button className='buttons' type='submit'>Sign Up</button>
 
                     </form>
 
@@ -127,7 +127,7 @@ const SignUp = () => {
                         <div className="overlay-panel overlay-left">
                             <h1>Welcome Back!</h1>
                             <p>To keep connected with us please login with your personal info</p>
-                            <Link to={'/login'}><button className="ghost" id="signIn">Sign In</button></Link>
+                            <Link to={'/login'}><button className="buttons ghost" id="signIn">Sign In</button></Link>
                         </div>
                         
                     </div>
