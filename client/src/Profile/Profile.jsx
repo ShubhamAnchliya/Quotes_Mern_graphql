@@ -58,7 +58,7 @@ const Profile = () => {
 
         const deleteQuoteById = async _id  =>  {
           
-          console.log(_id);
+          // console.log(_id);
 
           deleteQuote({ 
             variables: {
@@ -90,13 +90,13 @@ const Profile = () => {
 
 
               {
-                profiledata?.user.quotes?.map(quo => {
+                profiledata?.user.quotes?.map((quo, index) => {
 
                     console.log(quo, "quote_data_name");
 
        
                     return(
-                      <blockquote>
+                      <blockquote key={index}>
 
                     
 

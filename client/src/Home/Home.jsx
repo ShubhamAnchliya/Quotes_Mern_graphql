@@ -41,9 +41,9 @@ const Home = () => {
           <div className='items_home' >
 
           {
-            data.quotes?.map(quote =>{
+            data.quotes?.map((quote, index ) =>{
               return(
-                <div className='home_blockq'>
+                <div className='home_blockq' key={index}  >
 
                   <div className='quote_home_div'> 
                     {quote.name}

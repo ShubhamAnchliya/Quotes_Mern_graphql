@@ -56,7 +56,8 @@ const UpdateQuote = () => {
     }
     
     // console.log(quotedata, "quote_data")
-    }, [quotedata?.quotebyid?.name])
+    // }, [quotedata?.quotebyid?.name])
+     }, [navigate, quotedata?.quotebyid?.name])
 
 
     if (quoteloading) return <h3>Profile Loading...</h3>
@@ -83,7 +84,7 @@ const UpdateQuote = () => {
     setUQuote("");
     
     navigate("/")
-    window.location.reload();
+    // window.location.reload();
   }
 
 
